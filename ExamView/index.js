@@ -7,9 +7,19 @@ marked.use({
 		examOptions,
 		examSingleOption,
 	]})
-
+const filePicker = document.getElementById('entry')
+filePicker.addEventListener('change', handleMD, false)
 const container = document.getElementById('content')
-fetch('main.md').then(e => e.text())
-.then(data => {
-	container.innerHTML = marked.parse(data)
-})
+
+function handleMD() {
+	const file = this.files[0]
+	const reader = new FileReader()
+	reader.onload = e => {
+		container.innerHTML = marked.parse(e.target.result)
+	}
+	reader.onerror = e => {
+		console.info('读取失败')
+		console.error(e.error)
+	}
+	reader.readAsText(file)
+}
