@@ -155,7 +155,8 @@ ol.substems {
 	.showbtn,
 	#footer,
 	.paper-source,
-	#print {
+	#print,
+	input {
 		display: none;
 	}
 }
