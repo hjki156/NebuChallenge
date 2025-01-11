@@ -1,0 +1,161 @@
+@font-face {
+	font-family: "Song Ti";
+	src:
+		url("./Songti.ttf");
+}
+
+body {
+	font-family: "Times New Roman", "Song Ti";
+}
+
+.center {
+	text-align: center !important;
+}
+
+p {
+	text-indent: 2em;
+}
+ol {
+	margin: 1em;
+}
+ol p {
+	text-indent: 0;
+}
+
+table,
+tb,
+tr,
+td,
+th {
+	border: 1px solid;
+	border-collapse: collapse;
+}
+
+.exam-options {
+	padding: 4pt;
+}
+
+.exam-singleOption-large,
+.exam-singleOption-small {
+	list-style: upper-alpha;
+	display: block list-item;
+	/*margin-block-end: 1em;*/
+	margin-inline-end: 40px;
+}
+
+.exam-singleOption-small {
+	display: inline list-item;
+	margin-right: 1em;
+}
+
+.exam-singleOption-small:first-child {
+	margin-left: -1em;
+}
+
+blockquote {
+	border: 1px solid;
+	padding: 4pt;
+}
+
+hr {
+	border: 1px solid;
+}
+
+code {
+	background: #EEE;
+}
+
+.question-box {
+	margin: 10px 0;
+	padding: 2pt;
+	box-shadow: 0 0 2pt rgba(0, 0, 0, .6);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.fill {
+	display: inline-block;
+	min-width: 4em;
+	border-bottom: 1px solid currentcolor;
+}
+
+ol.substems {
+	list-style: lower-roman;
+}
+
+.answers,
+.analysis {
+	display: none;
+}
+
+.show {
+	display: block !important;
+}
+
+.paper-source {
+	font-size: 10pt;
+	background: #d2e3f3;
+	border: currentColor solid 1px;
+}
+
+#print {
+	position: fixed;
+	bottom: 15pt;
+	right: 15pt;
+	box-shadow: 0 0 4pt rgba(0, 0, 0, .3);
+}
+
+
+@media print {
+	body {
+		font-family: "Times New Roman", "Song Ti";
+		margin: 16pt;
+		text-align: justify;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0;
+	}
+
+	.center * {
+		text-align: center !important;
+	}
+
+	a:link,
+	a:visited {
+		color: #000;
+	}
+
+	@page {
+		size: A4;
+		margin: 20pt;
+
+		@bottom-center {
+			content: "第 " counter(page) " 页/共 " counter(pages) " 页";
+		}
+	}
+
+	code {
+		background: initial;
+	}
+
+	.question-box {
+		box-shadow: 0 0 0;
+	}
+
+	.showbtn,
+	#footer,
+	.paper-source,
+	#print {
+		display: none;
+	}
+}
