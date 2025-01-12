@@ -75,11 +75,15 @@ ol.exam-2rd-lists {
 .exam-2rd-list-single {
 	counter-increment: index;
 	list-style: none;
+	position: relative;
 }
 
 .exam-2rd-list-single:before {
 	content: '(' counter(index) ') ';
-	
+	width: fit-content;
+	position: absolute;
+	left: -.25rem;
+	transform: translateX(-100%);
 }
 .exam-essay {
 	border: 1px solid;
