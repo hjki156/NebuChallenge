@@ -197,4 +197,22 @@ D.
 >
 > To switch to a different console—for example, to view this guide with Lynx alongside the installation—use the Alt+arrow shortcut. To edit configuration files, mcedit(1), nano and vim are available. See `pkglist.x86_64.txt` for a list of the packages included in the installation medium.
 
+### **第四部分 写作**
 
+#### 第一节
+
+假定你是李华，你的朋友 Hu Zihan 最近在给希沃安装 Arch Linux, 请你写一封信帮助他，内容包括：
+
+(1) 表示支持；
+(2) 进入 BIOS 进行安装前操作；
+(3) 进入 Arch Linux install medium 进行基础安装；
+(4) 进入 Arch Linux 主系统进行日常配置：更换镜像源，更新软件包，安装 KDE 桌面环境，安装输入法，设置 Timeshift 快照，配置 Git 密匙；
+(5) 安装显卡驱动。
+
+#### 注意：
+
+(1) 希沃快捷键: BIOS F2; Manager F8;
+(2) 写作词数应为 1000 词左右；
+(3) 请按如下格式在相应位置作答。
+
+\exam-essay{Dear Hu Zihan:}
