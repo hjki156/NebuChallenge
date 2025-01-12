@@ -6,6 +6,9 @@ marked.use({
 		examCenter,
 		examOptions,
 		examSingleOption,
+		exam2rdLists,
+		exam2rdListSingle,
+		examEssay
 	]})
 const filePicker = document.getElementById('entry')
 filePicker.addEventListener('change', handleMD, false)

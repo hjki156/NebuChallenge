@@ -4,10 +4,10 @@ const examTopDesc = {
 	name: 'exam-top',
 	level: 'inline',
 	start(src) {
-		return src.match(/\\/)?.index
+		return src.match(/^\\/)?.index
 	},
 	tokenizer(src, tokens) {
-		const rule = /\\exam-top\{(.*?)\}\{(.*?)\}/
+		const rule = /^\\exam-top\{(.*?)\}\{(.*?)\}/
 		const match = rule.exec(src)
 		if (match) {
 			return {
@@ -27,10 +27,10 @@ const examCenter = {
 	name: 'exam-center',
 	level: 'inline',
 	start(src) {
-		return src.match(/\n\\exam-center/)?.index
+		return src.match(/^\n\\exam-center/)?.index
 	},
 	tokenizer(src, tokens) {
-		const rule = /\\center\{(.*?)\}/
+		const rule = /^\\center\{(.*?)\}/
 		const match = rule.exec(src)
 		if (match) {
 			return {
@@ -94,6 +94,80 @@ const examSingleOption = {
 	},
 	childTokens: ['li',
 	],
+}
+
+const exam2rdLists = {
+	name: 'exam-2rd-lists',
+	level: 'block',
+	start(src) {
+		return src.match(/^\n\(\d+\) /)?.index
+	},
+	tokenizer(src, tokens) {
+		const rule = /^(\(\d+\) .*?(?:\n|$))+/
+		const match = rule.exec(src)
+		if (match) {
+			const token = {
+				type: 'exam-2rd-lists',
+				raw: match[0],
+				text: match[0].trim(),
+				start: match[0].match(/\((\d+)\)/)[1],
+				tokens: []
+			}
+			this.lexer.inline(token.text, token.tokens)
+			return token
+		}
+	},
+	renderer(token) {
+		return `<ol class="exam-2rd-lists" data-start="${token.start}">${this.parser.parseInline(token.tokens)}\n</ol>`
+	}
+}
+
+const exam2rdListSingle = {
+	name: 'exam-2rd-list-single',
+	level: 'inline',
+	start(src) {
+		return src.match(/^\(\d+\)/)?.index
+	},
+	tokenizer(src, tokens) {
+		const rule = /^\(\d+\) ([^\n]+)/
+		const match = rule.exec(src)
+		if (match) {
+			const choice = match[1].trim()
+			return {
+				type: 'exam-2rd-list-single',
+				raw: match[0],
+				size: choice.length > BORDER_LS? 'large': 'small',
+				choice: this.lexer.inlineTokens(choice),
+			}
+		}
+	},
+	renderer(token) {
+		return `\n<li class="exam-2rd-list-single">${this.parser.parseInline(token.choice)}</li>`
+	},
+	childTokens: ['li',
+	],
+}
+
+const examEssay = {
+	name: 'exam-essay',
+	level: 'inline',
+	start(src) {
+		return src.match(/^\\/)?.index
+	},
+	tokenizer(src, tokens) {
+		const rule = /^\\exam-essay\{(.*?)\}/
+		const match = rule.exec(src)
+		if (match) {
+			return {
+				type: 'exam-essay',
+				raw: match[0],
+				example: match[1],
+			}
+		}
+	},
+	renderer(token) {
+		return `<div class="exam-essay"><span>${token.example}</span><span></span><span></span><br><br></div>`
+	},
 }
 
 
