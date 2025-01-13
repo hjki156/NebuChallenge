@@ -38,7 +38,9 @@ th {
 .exam-singleOption-large,
 .exam-singleOption-small {
 	list-style: upper-alpha;
-	display: block list-item;
+	display: inline-block list-item;
+	/* TODO: grid */
+	width: fit-content;
 	/*margin-block-end: 1em;*/
 	margin-inline-end: 40px;
 }
@@ -49,7 +51,7 @@ th {
 }
 
 .exam-singleOption-small:first-child {
-	margin-left: -1em;
+	/* margin-left: -1em;*/
 }
 
 blockquote {
@@ -84,20 +86,33 @@ ol.exam-2rd-lists {
 	position: absolute;
 	left: -.25rem;
 	transform: translateX(-100%);
+	/*  */
 }
+
 .exam-essay {
 	border: 1px solid;
 	height: fit-content;
 	min-height: 1em;
 	padding: 4pt;
-	word-break: break-word;
+	border-collapse: collapse;
+	margin-bottom: 1em;
 }
+
 .exam-essay span {
-	display: inline-block;
+	display: block;
 	border-bottom: 1px solid;
 	width: 100%;
 	height: 1em;
+	font-style: italic;
 }
+
+.exam-essay hr {
+	border: 0;
+	margin: 0;
+	border-bottom: 1px solid;
+	height: 1.1em;
+}
+
 
 .question-box {
 	margin: 10px 0;
@@ -148,6 +163,7 @@ ol.substems {
 		font-family: "Times New Roman", "Song Ti";
 		margin: 16pt;
 		text-align: justify;
+		line-height: 110%;
 	}
 
 	h1,
@@ -157,7 +173,7 @@ ol.substems {
 	h5,
 	h6,
 	p {
-		margin: 0;
+		margin: 8pt;
 	}
 
 	.center * {

@@ -166,7 +166,7 @@ const examEssay = {
 		}
 	},
 	renderer(token) {
-		return `<div class="exam-essay"><span>${token.example}</span><span></span><span></span><br><br></div>`
+		return `<div class="exam-essay"><span>${token.example}</span><hr /> <hr /><hr /><br /></div>`
 	},
 }
 
