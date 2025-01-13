@@ -216,3 +216,32 @@ D.
 (3) 请按如下格式在相应位置作答。
 
 \exam-essay{Dear Hu Zihan:}
+
+#### 第二节
+
+阅读下面的材料，根据其内容和所给段落开头续写两段，使之构成一篇完整的短文。
+
+Years later, as he confronted(面对) the Zig programming language, Hu Zihan would reminisce(回忆) about that distant afternoon spent coding in C++. “How much clearer it is compared to C++!” he mused(思忖), reflecting on Zig's syntax(语法), which he found to be more concise(简洁的). As he delved(深入研究) deeper into Zig's capabilities, Hu Zihan became increasingly captivated(着迷) by its design philosophy. The absence of garbage collection(垃圾回收) in Zig granted him an unparalleled level of control over memory management(内存管理), a critical advantage for his resource - constrained projects.
+ 
+In a serendipitous turn of events, Hu Zihan developed a fascination(痴迷) for Rubik's cubes. While browsing the internet, he stumbled upon(偶然发现) a website featuring an online Rubik's cube simulation. However, as he engaged with the application, he noticed performance hiccups(卡顿) and the limitations in its WebGL - based implementation(实现). The cube's rotations occasionally stuttered(卡顿), and the overall visual fidelity fell short of his high standards.
+ 
+An innovative(创新的) idea ignited(萌生) in his mind. Armed with his proficiency in Zig and a burgeoning interest in WebAssembly (Wasm) and WebGPU, he envisioned a transformative approach to enhance the online Rubik's cube experience.
+ 
+Hu Zihan embarked on(着手进行) an extensive research phase, meticulously analyzing the existing codebase(代码库) of the website's Rubik's cube implementation. Gaining a comprehensive understanding of the cube's logic—particularly the rotation algorithms(旋转算法) and state management—was paramount(至关重要的). He documented potential optimization points and identified areas where WebGPU could significantly elevate performance.
+ 
+With a clear plan in mind, he began the process of porting(移植) the relevant code segments to Zig. His familiarity with Zig's syntax enabled him to craft clean, efficient code. He meticulously rewrote the cube - manipulation algorithms, leveraging Zig's robust type - checking(类型检查) and compile - time optimizations to enhance performance and reliability(可靠性).
+ 
+Once the core logic was successfully translated into Zig, Hu Zihan shifted his focus to integrating(整合) it with Wasm. He compiled(编译) his Zig code into a WebAssembly module, ensuring it could be seamlessly loaded and executed within the browser environment. This phase required careful attention to detail to facilitate smooth communication between the JavaScript - based front end(前端) and the Wasm module.
+ 
+With the Wasm module operational, Hu Zihan turned his attention to WebGPU. He initiated the setup of the WebGPU context within the browser, which involved initializing the device, creating buffers(缓冲区) for the cube's vertex and index data, and establishing the rendering pipeline(渲染管线). He crafted shaders(着色器) using a GLSL - like syntax compatible(兼容的) with WebGPU to manage the cube's visual attributes, including color and lighting effects.
+ 
+As he progressed, Hu Zihan encountered a series of challenges. Compatibility issues arose between different browsers' implementations of WebGPU, necessitating additional debugging(调试). Yet, his unwavering determination propelled him forward, driving him to refine his implementation and ultimately enhance the online Rubik's cube experience. Through perseverance(毅力) and innovation, Hu Zihan was poised to redefine the intersection of programming and interactive gaming.
+ 
+#### 注意：
+
+(1) 续写词数应为 150 个左右；
+(2) 请按如下格式在答题卡相应位置作答。
+
+\exam-essay{Finally, after weeks of hard work, Hu Zihan has a working prototype.}
+
+\exam-essay{He shares his creation with the website's owner and the online Rubik's cube community.}
