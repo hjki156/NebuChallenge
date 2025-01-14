@@ -4,15 +4,16 @@
 
 #### 第一节
 
+
 阅读下列短文，从每题所给的 A、B、C、D 选项中选出最佳选项
 
 \center{## A}
 
 \center{### The Jokes of Masters}
-There are many people who shaped the current world's pattern. However, the jokes behind them also bring us joy. 
+There are many people who shaped the current world’s pattern. However, the jokes behind them also bring us joy. 
 
 #### Jeff Dean
-Jeff Dean, a top American computer scientist, made huge impacts at Google. He worked on key projects like MapReduce. Elected to the NAE in 2009, he's now Google's Chief Scientist.
+Jeff Dean, a top American computer scientist, made huge impacts at Google. He worked on key projects like MapReduce. Elected to the NAE in 2009, he’s now Google’s Chief Scientist.
 1. During his own Google interview, Jeff Dean was asked the  implications if P=NP were true. He said, “P = 0 or N = 1.” Then, before  the interviewer had even finished laughing, Jeff examined Google’s  public certificate and wrote the private key on the whiteboard.
 2. Compilers don’t warn Jeff Dean. Jeff Dean warns compilers.
 3. The rate at which Jeff Dean produces code jumped by a factor of 40  in late 2000 when he upgraded his keyboard to USB 2.0.
@@ -30,7 +31,7 @@ Ada Lovelace, often considered the first computer programmer, had a unique persp
 3. Ada believed that the only thing more complex than a computer was explaining it to her mother.
 
 #### Donald Knuth
-Donald Knuth, the author of "The Art of Computer Programming," is known for his meticulous approach to algorithms and typesetting.
+Donald Knuth, the author of “The Art of Computer Programming,” is known for his meticulous approach to algorithms and typesetting.
 1. Knuth once said, “I’m not a perfectionist; I just want my algorithms to be as perfect as my typesetting.”
 2. When asked how he feels about bugs in his code, he replied, “Bugs are just features waiting to be documented.”
 3. Knuth’s favorite exercise? “Counting the number of ways to optimize my coffee breaks.”
@@ -49,25 +50,25 @@ These jokes not only highlight the brilliance of these masters but also remind u
 A. He wanted a new operating system
 B. He hoped to learn more programming skills
 C. He couldn't find a good excuse to avoid doing his homework
-D. He wanted to challenge Microsoft's dominance
+D. He wanted to challenge Microsoft’s dominance
 
-2. **Which humorous expression reflects Ada Lovelace's view on modern programming languages?**
+2. **Which humorous expression reflects Ada Lovelace’s view on modern programming languages?**
 A. She thinks they are too complex and hard to understand
-B. She wishes she had a "for loop" to handle her daily chores
+B. She wishes she had a “for loop” to handle her daily chores
 C. She believes they are unnecessary and a waste of time
 D. She thinks they are not flexible enough to meet needs
 
-3. **What attitude does Donald Knuth's view on bugs in code reflect?**
-A. Bugs are a programmer's failure and must be fixed quickly
+3. **What attitude does Donald Knuth’s view on bugs in code reflect?**
+A. Bugs are a programmer’s failure and must be fixed quickly
 B. Bugs are inevitable, and programmers must accept them
 C. Bugs can be eliminated through rigorous testing and should never occur
 D. Bugs are just features waiting to be documented and should be taken seriously
 
-4. **What point does Grace Hopper's ship metaphor primarily convey?**
+4. **What point does Grace Hopper’s ship metaphor primarily convey?**
 A. The design and construction of the ship are the most important
 B. A ship in port is safe, but that is not its purpose
 C. Ships need regular maintenance to ensure safety
-D. The ship's ability to sail is more important than docking
+D. The ship’s ability to sail is more important than docking
 
 5. **What common theme is primarily emphasized in the article?**
 A. The humor and innovative spirit of the masters
@@ -75,15 +76,13 @@ B. The history and development of computers
 C. The competition and collaboration between tech companies
 D. The evolution and challenges of programming languages
 
-
-
 \center{## A}
 
 \center{### Unified Extensible Firmware Interface/Secure Boot}
 
 Secure Boot is a security feature found in the UEFI standard, designed to add a layer of protection to the pre-boot process: by maintaining a cryptographically signed list of binaries authorized or forbidden to run at boot, it helps in improving the confidence that the machine core boot components (boot manager, kernel, initramfs) have not been tampered with.
 
-As such it can be seen as a continuation or complement to the efforts in securing one's computing environment, reducing the attack surface that other software security solutions such as system encryption cannot easily cover, while being totally distinct and not dependent on them. Secure Boot just stands on its own as a component of current security practices, with its own set of pros and cons.
+As such it can be seen as a continuation or complement to the efforts in securing one’s computing environment, reducing the attack surface that other software security solutions such as system encryption cannot easily cover, while being totally distinct and not dependent on them. Secure Boot just stands on its own as a component of current security practices, with its own set of pros and cons.
 
 ## Before Booting the OS
 
@@ -95,7 +94,7 @@ In order to boot an installation medium in a Secure Boot system, you will need t
 
 ### Disabling Secure Boot
 
-The Secure Boot feature can be disabled via the UEFI firmware interface. How to access the firmware configuration is described in [Before booting the OS](#). Some motherboards (this is the case in a Packard Bell laptop and recent Xiaomi laptops) only allow to disable secure boot if you have set an administrator password that can be removed afterwards. See also Rod Smith's Disabling Secure Boot.
+The Secure Boot feature can be disabled via the UEFI firmware interface. How to access the firmware configuration is described in [Before booting the OS](#). Some motherboards (this is the case in a Packard Bell laptop and recent Xiaomi laptops) only allow to disable secure boot if you have set an administrator password that can be removed afterwards. See also Rod Smith’s Disabling Secure Boot.
 
 ### Editing the installation medium
 
@@ -105,7 +104,7 @@ If you are using a USB flash installation medium, then it is possible to manuall
 
 ### Using a signed boot loader
 
-Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders: PreLoader and shim. Their purpose is to chainload other EFI binaries (usually boot loaders). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use an allowlist called Machine Owner Key list, abbreviated MokList. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
+Using a signed boot loader means using a boot loader signed with Microsoft’s key. There are two known signed boot loaders: PreLoader and shim. Their purpose is to chainload other EFI binaries (usually boot loaders). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use an allowlist called Machine Owner Key list, abbreviated MokList. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
 
 #### PreLoader
 
@@ -139,7 +138,7 @@ Using hash is simpler, but each time you update your boot loader or kernel you w
 
 ## Protecting Secure Boot
 
-The only way to prevent anyone with physical access from disabling Secure Boot is to protect the firmware settings with a password. Most UEFI firmwares provide such a feature, usually listed under the "Security" section in the firmware settings.
+The only way to prevent anyone with physical access from disabling Secure Boot is to protect the firmware settings with a password. Most UEFI firmwares provide such a feature, usually listed under the “Security” section in the firmware settings.
 
 ---
 
@@ -150,9 +149,9 @@ C. Secure Boot ensures the integrity of core boot components and the efficacy of
 D. Secure Boot operates independently of other security measures and provides an additional layer of defense against pre-boot attacks.
 
 2. **Which of the following statements about the possible usage and configuration of Secure Boot is CORRECT?**
-A. Recent iterations of Xiaomi laptops give users access to the configuration of Secure Boot within the firmware only if the administrator password remains active after setting up. Users can possibly set the password in the "Security" section in the firmware settings.
-B. Developers of Linux distributions have the capability to assist users to employ PreLoader which includes HashTool, a mechanism which facilitates the integration of the keys utilized for digitally signing EFI binary files into the Machine Owner Key List (MokList) of the user's laptop.
-C. When configuring Secure Boot using PreLoader and encountering issues with booting a custom NVRAM entry, it is always necessary to copy `HashTool.efi` and `loader.efi` to the UEFI system's default automatic boot loader location. Subsequently, `PreLoader.efi` must be copied to the default boot loader location used by Windows systems.
+A. Recent iterations of Xiaomi laptops give users access to the configuration of Secure Boot within the firmware only if the administrator password remains active after setting up. Users can possibly set the password in the “Security” section in the firmware settings.
+B. Developers of Linux distributions have the capability to assist users to employ PreLoader which includes HashTool, a mechanism which facilitates the integration of the keys utilized for digitally signing EFI binary files into the Machine Owner Key List (MokList) of the user’s laptop.
+C. When configuring Secure Boot using PreLoader and encountering issues with booting a custom NVRAM entry, it is always necessary to copy `HashTool.efi` and `loader.efi` to the UEFI system’s default automatic boot loader location. Subsequently, `PreLoader.efi` must be copied to the default boot loader location used by Windows systems.
 D. During the boot process, suppose HashTool is used to enroll the hashes of `loader.efi` and `vmlinuz.efi`. Start by selecting *OK* to begin. Enroll the hash for `loader.efi` by choosing *Enroll Hash* and confirming with *Yes*, and then repeat the process for `vmlinuz.efi`. Finally, exit HashTool to return to the boot device selection menu, and select the appropriate Arch Linux boot option (such as *Arch Linux archiso x86_64 UEFI CD*), depending on your boot loader configuration, to start the system.
 
 3. **Which content is possibly included in [Before booting the OS](#)?**
@@ -182,12 +181,12 @@ B.
 C.
 > Replacing the platform keys with your own can end up bricking hardware on some machines, including laptops, making it impossible to get into the firmware settings to rectify the situation. This is due to the fact that some device (e.g GPU) firmware (OpROMs), that get executed during boot, are signed using Microsoft 3rd Party UEFI CA certificate or vendor certificates. This is the case in many Lenovo Thinkpad X, P and T series laptops which uses the Lenovo CA certificate to sign UEFI applications and firmware.
 >
-> **Do not** copy the `noPK.auth` file to the EFI system partition (ESP) of your PC! If you do this, and someone e.g. steals your PC, this person can delete the personal Platform Key in the UEFI Secure Boot firmware again, turn on "Setup Mode" on your PC again and replace your Secure Boot Keys (PK, KEK, db, dbx) with their own Platform Key, thereby defeating the whole purpose of UEFI Secure Boot. Only you should be able to replace the Platform Key, so only you should have access to the `noPK.auth` file. Therefore keep the `noPK.auth` file in a secret, safe place where only you have access to.
+> **Do not** copy the `noPK.auth` file to the EFI system partition (ESP) of your PC! If you do this, and someone e.g. steals your PC, this person can delete the personal Platform Key in the UEFI Secure Boot firmware again, turn on “Setup Mode” on your PC again and replace your Secure Boot Keys (PK, KEK, db, dbx) with their own Platform Key, thereby defeating the whole purpose of UEFI Secure Boot. Only you should be able to replace the Platform Key, so only you should have access to the `noPK.auth` file. Therefore keep the `noPK.auth` file in a secret, safe place where only you have access to.
 
 D.
-> Point the current boot device to the one which has the Arch Linux installation medium. Typically it is achieved by pressing a key during the POST phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
+> Point the current boot device to the one which has the Arch Linux installation medium. Typically it is achieved by pressing a key during the POST phase, as indicated on the splash screen. Refer to your motherboard’s manual for details.
 >
-> When the installation medium's boot loader menu appears,
+> When the installation medium’s boot loader menu appears,
 >
 > 1. if you used the ISO, select Arch Linux install medium and press Enter to enter the installation environment.
 >
@@ -221,27 +220,31 @@ D.
 
 阅读下面的材料，根据其内容和所给段落开头续写两段，使之构成一篇完整的短文。
 
-Years later, as he confronted(面对) the Zig programming language, Hu Zihan would reminisce(回忆) about that distant afternoon spent coding in C++. “How much clearer it is compared to C++!” he mused(思忖), reflecting on Zig's syntax(语法), which he found to be more concise(简洁的). As he delved(深入研究) deeper into Zig's capabilities, Hu Zihan became increasingly captivated(着迷) by its design philosophy. The absence of garbage collection(垃圾回收) in Zig granted him an unparalleled level of control over memory management(内存管理), a critical advantage for his resource - constrained projects.
+Years later, as he confronted(面对) the Zig programming language, Hu Zihan would reminisce(回忆) about that distant afternoon spent coding in C++. “How much clearer it is compared to C++!” he mused(思忖), reflecting on Zig’s syntax(语法), which he found to be more concise(简洁的). As he delved(深入研究) deeper into Zig’s capabilities, Hu Zihan became increasingly captivated(着迷) by its design philosophy. The absence of garbage collection(垃圾回收) in Zig granted him an unparalleled level of control over memory management(内存管理), a critical advantage for his resource - constrained projects.
  
-In a serendipitous turn of events, Hu Zihan developed a fascination(痴迷) for Rubik's cubes. While browsing the internet, he stumbled upon(偶然发现) a website featuring an online Rubik's cube simulation. However, as he engaged with the application, he noticed performance hiccups(卡顿) and the limitations in its WebGL - based implementation(实现). The cube's rotations occasionally stuttered(卡顿), and the overall visual fidelity fell short of his high standards.
+In a serendipitous turn of events, Hu Zihan developed a fascination(痴迷) for Rubik’s cubes. During an English class, he and his classmates became engrossed (全神贯注的) in solving the puzzles, diverting (转移) their attention from the lesson. Their English teacher, possessing (拥有) keen (敏锐的) hearing and sharp eyesight, quickly noticed their distraction and promptly (迅速地) confiscated (没收) Hu Zihan’s Rubik’s Cube. Disheartened (沮丧的) by the loss, Hu Zihan turned to the internet in search of a suitable substitute (替代品) to satisfy his newfound obsession (痴迷).
+
+While browsing the internet, he stumbled upon(偶然发现) a website featuring an online Rubik’s cube simulation. However, as he engaged with the application, he noticed performance hiccups(卡顿) and the limitations in its WebGL - based implementation(实现). The cube’s rotations occasionally stuttered(卡顿), and the overall visual fidelity fell short of his high standards.
  
-An innovative(创新的) idea ignited(萌生) in his mind. Armed with his proficiency in Zig and a burgeoning interest in WebAssembly (Wasm) and WebGPU, he envisioned a transformative approach to enhance the online Rubik's cube experience.
+An innovative(创新的) idea ignited(萌生) in his mind. Armed with his proficiency in Zig and a burgeoning interest in WebAssembly (Wasm) and WebGPU, he envisioned a transformative approach to enhance the online Rubik’s cube experience.
  
-Hu Zihan embarked on(着手进行) an extensive research phase, meticulously analyzing the existing codebase(代码库) of the website's Rubik's cube implementation. Gaining a comprehensive understanding of the cube's logic—particularly the rotation algorithms(旋转算法) and state management—was paramount(至关重要的). He documented potential optimization points and identified areas where WebGPU could significantly elevate performance.
+Hu Zihan embarked on(着手进行) an extensive research phase, meticulously analyzing the existing codebase(代码库) of the website’s Rubik’s cube implementation. Gaining a comprehensive understanding of the cube’s logic—particularly the rotation algorithms(旋转算法) and state management—was paramount(至关重要的). He documented potential optimization points and identified areas where WebGPU could significantly elevate performance.
  
-With a clear plan in mind, he began the process of porting(移植) the relevant code segments to Zig. His familiarity with Zig's syntax enabled him to craft clean, efficient code. He meticulously rewrote the cube - manipulation algorithms, leveraging Zig's robust type - checking(类型检查) and compile - time optimizations to enhance performance and reliability(可靠性).
+With a clear plan in mind, he began the process of porting(移植) the relevant code segments to Zig. His familiarity with Zig’s syntax enabled him to craft clean, efficient code. He meticulously rewrote the cube - manipulation algorithms, leveraging Zig’s robust type - checking(类型检查) and compile - time optimizations to enhance performance and reliability(可靠性).
  
 Once the core logic was successfully translated into Zig, Hu Zihan shifted his focus to integrating(整合) it with Wasm. He compiled(编译) his Zig code into a WebAssembly module, ensuring it could be seamlessly loaded and executed within the browser environment. This phase required careful attention to detail to facilitate smooth communication between the JavaScript - based front end(前端) and the Wasm module.
  
-With the Wasm module operational, Hu Zihan turned his attention to WebGPU. He initiated the setup of the WebGPU context within the browser, which involved initializing the device, creating buffers(缓冲区) for the cube's vertex and index data, and establishing the rendering pipeline(渲染管线). He crafted shaders(着色器) using a GLSL - like syntax compatible(兼容的) with WebGPU to manage the cube's visual attributes, including color and lighting effects.
+With the Wasm module operational, Hu Zihan turned his attention to WebGPU. He initiated the setup of the WebGPU context within the browser, which involved initializing the device, creating buffers(缓冲区) for the cube’s vertex and index data, and establishing the rendering pipeline(渲染管线). He crafted shaders(着色器) using a GLSL - like syntax compatible(兼容的) with WebGPU to manage the cube’s visual attributes, including color and lighting effects.
  
-As he progressed, Hu Zihan encountered a series of challenges. Compatibility issues arose between different browsers' implementations of WebGPU, necessitating additional debugging(调试). Yet, his unwavering determination propelled him forward, driving him to refine his implementation and ultimately enhance the online Rubik's cube experience. Through perseverance(毅力) and innovation, Hu Zihan was poised to redefine the intersection of programming and interactive gaming.
+As he progressed, Hu Zihan encountered a series of challenges. Compatibility issues arose between different browsers’ implementations of WebGPU, necessitating additional debugging(调试). Yet, his unwavering determination propelled him forward, driving him to refine his implementation and ultimately enhance the online Rubik’s cube experience. Through perseverance(毅力) and innovation, Hu Zihan was poised to redefine the intersection of programming and interactive gaming.
  
 #### 注意：
 
-(1) 续写词数应为 150 个左右；
+(1) 续写词数应为 250 个左右；
 (2) 请按如下格式在答题卡相应位置作答。
 
-\exam-essay{Finally, after weeks of hard work, Hu Zihan has a working prototype.}
+\exam-essay{Finally, after weeks of hard work, Hu Zihan had a working prototype.}
 
-\exam-essay{He shares his creation with the website's owner and the online Rubik's cube community.}
+\exam-essay{He showcased his creation to the teacher and requested the Rubik's Cube's return.}
+
+\exam-essay{Motivated by the teacher, he reached out to the website owner to share his work.}

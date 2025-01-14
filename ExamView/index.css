@@ -1,5 +1,6 @@
 @font-face {
 	font-family: "Song Ti";
+	font-display: swap;
 	src:
 		url("./Songti.ttf");
 }
@@ -71,7 +72,7 @@ code {
  * 
  */
 ol.exam-2rd-lists {
-	counter-reset: index attr(data-start integer, 0);
+	counter-reset: index attr(data-start, 1);
 }
 
 .exam-2rd-list-single {
@@ -190,6 +191,7 @@ ol.substems {
 		margin: 20pt;
 
 		@bottom-center {
+			font-family: "Times New Roman", "Song Ti";
 			content: "第 " counter(page) " 页/共 " counter(pages) " 页";
 		}
 	}

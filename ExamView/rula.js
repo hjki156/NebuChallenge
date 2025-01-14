@@ -144,8 +144,7 @@ const exam2rdListSingle = {
 	renderer(token) {
 		return `\n<li class="exam-2rd-list-single">${this.parser.parseInline(token.choice)}</li>`
 	},
-	childTokens: ['li',
-	],
+	childTokens: ['li',],
 }
 
 const examEssay = {
@@ -169,6 +168,21 @@ const examEssay = {
 		return `<div class="exam-essay"><span>${token.example}</span><hr /> <hr /><hr /><br /></div>`
 	},
 }
-
+/**
+ * TODO: 构造一个状态机来解决类似嵌套的问题。
+ */
+const examSectionClass = {
+	name: 'exam-section-class',
+	level: 'block',
+	start(src) {
+		return src.match(/^\\begin/)?.index
+	},
+	tokenizer(src, tokens) {
+		
+	},
+	renderer(token) {
+		return `<section class="${token.class}">${marked.parse(token.content)}</section>`
+	}
+}
 
 // export {examTopDesc, examCenter, examOptions, examSingleOption}
