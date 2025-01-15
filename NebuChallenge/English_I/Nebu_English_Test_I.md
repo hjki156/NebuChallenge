@@ -7,6 +7,7 @@
 
 阅读下列短文，从每题所给的 A、B、C、D 选项中选出最佳选项
 
+\begin{exam-part}
 \center{## A}
 
 \center{### The Jokes of Masters}
@@ -75,7 +76,8 @@ A. The humor and innovative spirit of the masters
 B. The history and development of computers
 C. The competition and collaboration between tech companies
 D. The evolution and challenges of programming languages
-
+\end{exam-part}
+\begin{exam-part}
 \center{## A}
 
 \center{### Unified Extensible Firmware Interface/Secure Boot}
@@ -196,9 +198,13 @@ D.
 >
 > To switch to a different console—for example, to view this guide with Lynx alongside the installation—use the Alt+arrow shortcut. To edit configuration files, mcedit(1), nano and vim are available. See `pkglist.x86_64.txt` for a list of the packages included in the installation medium.
 
+\end{exam-part}
+
 ### **第四部分 写作**
 
 #### 第一节
+
+\begin{exam-part}
 
 假定你是李华，你的朋友 Hu Zihan 最近在给希沃安装 Arch Linux, 请你写一封信帮助他，内容包括：
 
@@ -211,10 +217,14 @@ D.
 #### 注意：
 
 (1) 希沃快捷键: BIOS F2; Manager F8;
-(2) 写作词数应为 1000 词左右；
+(2) 写作词数不做要求，但必须可以复现；
 (3) 请按如下格式在相应位置作答。
 
 \exam-essay{Dear Hu Zihan:}
+
+\end{exam-part}
+
+\begin{exam-part}
 
 #### 第二节
 
@@ -248,3 +258,5 @@ As he progressed, Hu Zihan encountered a series of challenges. Compatibility iss
 \exam-essay{He showcased his creation to the teacher and requested the Rubik's Cube's return.}
 
 \exam-essay{Motivated by the teacher, he reached out to the website owner to share his work.}
+
+\end{exam-part}
