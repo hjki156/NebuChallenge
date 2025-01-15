@@ -178,10 +178,24 @@ const examSectionClass = {
 		return src.match(/^\\begin/)?.index
 	},
 	tokenizer(src, tokens) {
-		
+		const rule = /^\\begin\{(.*?)\}([\S\s]*?)\\end\{\1\}/
+		const match = rule.exec(src)
+		if (match) {
+			return {
+				type: 'exam-section-class',
+				raw: match[0],
+				class: match[1].trim(),
+				content: match[2],
+			}
+		}
 	},
 	renderer(token) {
-		return `<section class="${token.class}">${marked.parse(token.content)}</section>`
+		if (token.class === 'exam-part') {
+			return  `<input type="checkbox" class="exam-part-check" checked />
+			<section class="${token.class}">${marked.parse(token.content)}</section>`
+		} else {
+			return `<section class="${token.class}">${marked.parse(token.content)}</section>`
+		}
 	}
 }
 

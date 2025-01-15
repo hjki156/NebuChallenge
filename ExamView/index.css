@@ -114,6 +114,39 @@ ol.exam-2rd-lists {
 	height: 1.1em;
 }
 
+input.exam-part-check + .exam-part {
+	color: #888;
+}
+input.exam-part-check:checked + .exam-part {
+	color: inherit;
+}
+input.exam-part-check:after {
+	content: '';
+	box-sizing: border-box;
+	position: relative;
+	top: -4pt;
+	padding: 2pt;
+	width: 62vw;
+	display: block;
+	border-top: 1pt solid;
+}
+input.exam-part-check:checked:before {
+	margin-left: 1.5em;
+	float: left;
+	display: inline-block;
+	width: max-content;
+	content: '已选中';
+}
+
+.exam-part-collapse {
+	max-height: 25em;
+	display: block;
+	border-bottom: 1pt solid;
+	margin-bottom: 2em;
+	overflow: hidden;
+	box-shadow: inset 0 -4pt 2pt -1pt rgba(0, 0, 0, .2);
+}
+
 
 .question-box {
 	margin: 10px 0;
@@ -189,8 +222,10 @@ ol.substems {
 	@page {
 		size: A4;
 		margin: 20pt;
+		
 
 		@bottom-center {
+			font-size: .8rem;
 			font-family: "Times New Roman", "Song Ti";
 			content: "第 " counter(page) " 页/共 " counter(pages) " 页";
 		}
@@ -203,12 +238,21 @@ ol.substems {
 	.question-box {
 		box-shadow: 0 0 0;
 	}
+	
+	.exam-part-collapse {
+		max-height: initial;
+		box-shadow: 0 0 0;
+	}
 
 	.showbtn,
 	#footer,
 	.paper-source,
 	#print,
-	input {
+	input,
+	input.exam-part-check + .exam-part	{
 		display: none;
+	}
+	input.exam-part-check:checked + .exam-part {
+		display: initial;
 	}
 }
