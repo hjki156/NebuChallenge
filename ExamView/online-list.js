@@ -28,6 +28,13 @@ function handleSelected(e) {
 		return e.text()
 	}).then(data => {
 		document.getElementById('content').innerHTML = marked.parse(data)
+		/**
+		 * TODO: 常用代码复用问题…
+		 */
+		const parts = document.querySelectorAll('.exam-part')
+		parts.forEach(e => {
+			e.addEventListener('touchstart', handleCollapse)
+		})
 	}).catch(err => {
 		console.error(err)
 	})
