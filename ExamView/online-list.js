@@ -1,30 +1,42 @@
 function handleFileList(data) {
 	const container = new DocumentFragment()
-	container.innerText = 'or Select'
+	container.append(
+		document.createElement('br'),
+		'or Select: '
+		)
 	const selectMenu = document.createElement('select')
-	data.split('\n').forEach(e => {
-		const temp = new DocumentFragment()
-		temp.innerHTML = `<option value="${e}">${e.split('/').pop()}</option>`
-		selectMenu.appendChild(temp)
+	let list = data.trim().split('\n')
+	list.unshift('')
+	list.forEach(e => {
+		const temp = document.createElement('option')
+		temp.value = e
+		temp.append(e.split('/').pop())
+		selectMenu.append(temp)
 	})
 	selectMenu.addEventListener('change', handleSelected)
-	container.appendChild(selectMenu)
+	container.append(selectMenu)
 	document.getElementById('entry').after(container)
 }
 function handleSelected(e) {
-	fetch(e.target.value).then(e => text())
-	.then(data => {
+	if (e.target.value === '') {
+		return
+	}
+	fetch(e.target.value).then(e => {
+		if (!e.ok) {
+			throw new Error('Fetch Fail')
+		}
+		return e.text()
+	}).then(data => {
 		document.getElementById('content').innerHTML = marked.parse(data)
+	}).catch(err => {
+		console.error(err)
 	})
 }
-fetch('./config.txt')
-.then(e => {
+fetch('./config.txt').then(e => {
 	if (!e.ok) {
 		throw new Error('Fetch Fail')
 	}
 	return e.text()
-})
-.then(handleFileList)
-.catch(err => {
+}).then(handleFileList).catch(err => {
 	console.error(err)
 })
