@@ -19,7 +19,7 @@ function handleSelected(e) {
 }
 fetch('./config.txt')
 .then(e => {
-	if (!response.ok) {
+	if (!e.ok) {
 		throw new Error('Fetch Fail')
 	}
 	e.text()
