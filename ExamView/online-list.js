@@ -8,7 +8,7 @@ function handleFileList(data) {
 		selectMenu.appendChild(temp)
 	})
 	selectMenu.addEventListener('change', handleSelected)
-	container.appendChild(selecMenu)
+	container.appendChild(selectMenu)
 	document.getElementById('entry').after(container)
 }
 function handleSelected(e) {
