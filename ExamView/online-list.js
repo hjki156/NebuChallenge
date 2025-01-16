@@ -22,7 +22,7 @@ fetch('./config.txt')
 	if (!e.ok) {
 		throw new Error('Fetch Fail')
 	}
-	e.text()
+	return e.text()
 })
 .then(handleFileList)
 .catch(err => {
