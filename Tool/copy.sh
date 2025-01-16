@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source_dir="./Files/"
+source_dir="./NebuChallenge"
 target_dir="./ExamView/Files"
 
 if [ ! -d "$target_dir" ]; then
