@@ -5,9 +5,9 @@ function handleFileList(data) {
 	data.split('\n').forEach(e => {
 		const temp = new DocumentFragment()
 		temp.innerHTML = `<option value="${e}">${e.split('/').pop()}</option>`
-		selecMenu.appendChild(temp)
+		selectMenu.appendChild(temp)
 	})
-	selecMenu.addEventListener('change', handleSelected)
+	selectMenu.addEventListener('change', handleSelected)
 	container.appendChild(selecMenu)
 	document.getElementById('entry').after(container)
 }
