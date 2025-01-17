@@ -1,9 +1,10 @@
 function handleFileList(data) {
-	const container = new DocumentFragment()
+	const container = document.createElement('div')
 	container.append(
 		document.createElement('br'),
 		'or Select: '
 		)
+	container.classList.add('select-direct')
 	const selectMenu = document.createElement('select')
 	let list = data.trim().split('\n')
 	list.unshift('')

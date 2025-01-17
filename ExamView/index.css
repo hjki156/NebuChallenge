@@ -9,6 +9,10 @@ body {
 	font-family: "Times New Roman", "Song Ti";
 }
 
+#content {
+  outline: 0;
+}
+
 .center {
 	text-align: center !important;
 }
@@ -249,7 +253,8 @@ ol.substems {
 	.paper-source,
 	#print,
 	input,
-	input.exam-part-check + .exam-part	{
+	input.exam-part-check + .exam-part,
+	.select-direct {
 		display: none;
 	}
 	input.exam-part-check:checked + .exam-part {
